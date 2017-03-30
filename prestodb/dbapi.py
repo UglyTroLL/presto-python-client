@@ -146,6 +146,12 @@ class Cursor(object):
 
         return -1
 
+    @property
+    def state(self):
+        if self._query is not None and self._query.state is not None:
+            return self._query.state
+        return None
+
     def setinputsizes(self, sizes):
         """Not supported"""
         pass
